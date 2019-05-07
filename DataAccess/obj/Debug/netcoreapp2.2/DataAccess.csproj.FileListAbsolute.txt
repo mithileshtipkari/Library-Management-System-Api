@@ -1,0 +1,6 @@
+C:\Users\sawa_kru\Documents\Visual Studio 2017\Projects\DomainModel\DataAccess\bin\Debug\netcoreapp2.2\DataAccess.deps.json
+C:\Users\sawa_kru\Documents\Visual Studio 2017\Projects\DomainModel\DataAccess\bin\Debug\netcoreapp2.2\DataAccess.dll
+C:\Users\sawa_kru\Documents\Visual Studio 2017\Projects\DomainModel\DataAccess\obj\Debug\netcoreapp2.2\DataAccess.csprojAssemblyReference.cache
+C:\Users\sawa_kru\Documents\Visual Studio 2017\Projects\DomainModel\DataAccess\obj\Debug\netcoreapp2.2\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\sawa_kru\Documents\Visual Studio 2017\Projects\DomainModel\DataAccess\obj\Debug\netcoreapp2.2\DataAccess.AssemblyInfoInputs.cache
+C:\Users\sawa_kru\Documents\Visual Studio 2017\Projects\DomainModel\DataAccess\obj\Debug\netcoreapp2.2\DataAccess.AssemblyInfo.cs
