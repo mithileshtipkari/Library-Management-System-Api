@@ -1,14 +1,15 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "4f41cbf95105205569882399698d2c77245f685e"
+    "signature": "bf87d35340cb291b34c5b916a016804d91434703"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.2": {
       "DataAccess/1.0.0": {
         "dependencies": {
-          "MongoDB.Bson": "2.3.0"
+          "MongoDB.Bson": "2.3.0",
+          "Newtonsoft.Json": "12.0.2"
         },
         "runtime": {
           "DataAccess.dll": {}
@@ -51,6 +52,14 @@
           "lib/netstandard1.5/MongoDB.Bson.dll": {
             "assemblyVersion": "2.3.0.0",
             "fileVersion": "2.3.0.0"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.2": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.2.23222"
           }
         }
       },
@@ -333,6 +342,13 @@
       "sha512": "sha512-ImZ8Dstc+ZUxEqgIXJtFuL2+sesc+e0SwF68Wh8P3gSYLyWRL3hacNNgmE9iUgxUyYzVg4Sr55aRsHkHw9IaDw==",
       "path": "mongodb.bson/2.3.0",
       "hashPath": "mongodb.bson.2.3.0.nupkg.sha512"
+    },
+    "Newtonsoft.Json/12.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
+      "path": "newtonsoft.json/12.0.2",
+      "hashPath": "newtonsoft.json.12.0.2.nupkg.sha512"
     },
     "runtime.native.System/4.0.0": {
       "type": "package",
