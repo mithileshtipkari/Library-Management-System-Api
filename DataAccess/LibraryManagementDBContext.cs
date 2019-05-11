@@ -20,7 +20,9 @@ namespace DataAccess
 
         public LibraryManagementDBContext()
         {
-            var connectionString = "";
+            var connectionString = DBConfigurator.GetConnectionString();
+            var mongoClient = new MongoClient(connectionString);
+            _database = mongoClient.GetDatabase("LibraryManagementDB");
         }
         #endregion
 
