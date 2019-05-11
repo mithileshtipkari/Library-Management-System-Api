@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using DataAccess.Entity_Model;
+using MongoDB.Driver;
 
 namespace DataAccess
 {
@@ -18,7 +19,7 @@ namespace DataAccess
             }
         }
 
-        public LibraryManagementDBContext()
+        private LibraryManagementDBContext()
         {
             var connectionString = DBConfigurator.GetConnectionString();
             var mongoClient = new MongoClient(connectionString);
@@ -26,5 +27,6 @@ namespace DataAccess
         }
         #endregion
 
+        public IMongoCollection<BookItemEntityModel> Books => _database.GetCollection<BookItemEntityModel>("Books");
     }
 }

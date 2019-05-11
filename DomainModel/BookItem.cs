@@ -4,7 +4,7 @@ using DomainModel.Enums;
 
 namespace DomainModel
 {
-    public class BookItems : Book
+    public class BookItem : Book
     {
         private readonly string _barcode;
         private readonly bool _isReferenceOnly;
@@ -17,7 +17,7 @@ namespace DomainModel
         private readonly DateTime _publicationDate;
         private readonly Rack _placedAt;
 
-        public BookItems(string barcode, bool isReferenceOnly, DateTime borrowed, 
+        public BookItem(string barcode, bool isReferenceOnly, DateTime borrowed, 
             DateTime dueDate, double price, BookFormat format, BookStatus status,
             DateTime dateOfPurchase, DateTime publicationDate, Rack placedAt,
             string ISBN, string title, string subject, string publisher, 
