@@ -67,3 +67,8 @@
 /UseCaseBoundary/obj/UseCaseBoundary.csproj.nuget.cache
 /UseCaseBoundary/obj/UseCaseBoundary.csproj.nuget.g.props
 /UseCaseBoundary/obj/UseCaseBoundary.csproj.nuget.g.targets
+/RepositoryImplementation/bin/Debug/netcoreapp2.2/DataAccess.dll
+/RepositoryImplementation/bin/Debug/netcoreapp2.2/DataAccess.pdb
+/RepositoryImplementation/bin/Debug/netcoreapp2.2/DomainModel.dll
+/RepositoryImplementation/bin/Debug/netcoreapp2.2/DomainModel.pdb
+/RepositoryImplementation/obj/Debug/netcoreapp2.2/RepositoryImplementation.csproj.FileListAbsolute.txt

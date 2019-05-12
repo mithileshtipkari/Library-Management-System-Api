@@ -6,6 +6,10 @@ using DomainModel;
 using UseCaseBoundary;
 using MongoDB.Driver;
 using DataAccess;
+using MongoDB.Bson;
+using RepositoryImplementation.Mappers;
+using System.Linq;
+using MongoDB.Driver.Linq;
 
 namespace RepositoryImplementation
 {
@@ -16,19 +20,22 @@ namespace RepositoryImplementation
         {
             _libraryManagementDBContext = LibraryManagementDBContext.Instance;
         }
-        public Task<List<BookItem>> GetAllBookItem()
+        public List<BookItem> GetAllBookItem()
         {
-            //IMongoCollection<BookItemEntityModel> BookEntityModels = _libraryManagementDBContext.Books;
-            throw new NotImplementedException();
-
+            List<BookItemEntityModel> bookItemEntityModels = _libraryManagementDBContext.Books.AsQueryable().ToList();
+            List<BookItem> bookDomainModels = BookModelMapper.GetBookDomainModels(bookItemEntityModels);
+            return bookDomainModels;
         }
 
-        public Task<BookItem> GetBookItem(string title)
+        public BookItem GetBookItem(string title)
         {
-            throw new NotImplementedException();
+            BookItemEntityModel bookItemEntityModel = _libraryManagementDBContext.Books.AsQueryable()
+                .FirstOrDefault(x => x.title == title);
+            BookItem bookDomainModel = BookModelMapper.GetBookDomainModel(bookItemEntityModel);
+            return bookDomainModel;
         }
 
-        public Task<long> AddBookItem(BookItem bookItem)
+        public long AddBookItem(BookItem bookItem)
         {
             throw new NotImplementedException();
         }

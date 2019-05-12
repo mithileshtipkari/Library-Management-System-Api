@@ -11,46 +11,46 @@ namespace DataAccess.Entity_Model
     public class BookItemEntityModel
     {
         [BsonId]
-        public ObjectId _objectId { get; set; }
+        public ObjectId objectId { get; set; }
 
         [Required]
-        public string _ISBN { get; set; }
+        public string ISBN { get; set; }
 
-        public string _title { get; set; }
+        public string title { get; set; }
 
-        public string _subject { get; set; }
+        public string subject { get; set; }
 
-        public string _publisher { get; set; }
+        public string publisher { get; set; }
 
-        public string _language { get; set; }
+        public string language { get; set; }
 
-        public int _noOfPages { get; set; }
+        public int noOfPages { get; set; }
 
-        public List<string> _authors { get; set; }
+        public List<string> authors { get; set; }
 
-        public string _barcode { get; set; }
+        public string barcode { get; set; }
 
-        public bool _isReferenceOnly { get; set; }
-
-        [BsonDateTimeOptions]
-        public DateTime _borrowed { get; set; }
+        public bool isReferenceOnly { get; set; }
 
         [BsonDateTimeOptions]
-        public DateTime _dueDate { get; set; }
-
-        public double _price { get; set; }
-
-        public string _format { get; set; }
-
-        public string _status { get; set; }
+        public DateTime borrowed { get; set; }
 
         [BsonDateTimeOptions]
-        public DateTime _dateOfPurchase { get; set; }
+        public DateTime dueDate { get; set; }
+
+        public double price { get; set; }
+
+        public string format { get; set; }
+
+        public string status { get; set; }
 
         [BsonDateTimeOptions]
-        public DateTime _publicationDate { get; set; }
+        public DateTime dateOfPurchase { get; set; }
 
-        public string _placedAt { get; set; }
+        [BsonDateTimeOptions]
+        public DateTime publicationDate { get; set; }
+
+        public string placedAt { get; set; }
 
     }
 }

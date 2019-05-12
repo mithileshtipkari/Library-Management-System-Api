@@ -6,10 +6,10 @@ namespace UseCaseBoundary
 {
     public interface BookRepository
     {
-        Task<List<BookItem>> GetAllBookItem();
+        List<BookItem> GetAllBookItem();
 
-        Task<BookItem> GetBookItem(string title);
+        BookItem GetBookItem(string title);
 
-        Task<long> AddBookItem(BookItem bookItem);
+        long AddBookItem(BookItem bookItem);
     }
 }
