@@ -16,41 +16,41 @@ namespace DataAccess.Entity_Model
         [Required]
         public string ISBN { get; set; }
 
-        public string title { get; set; }
+        public string Title { get; set; }
 
-        public string subject { get; set; }
+        public string Subject { get; set; }
 
-        public string publisher { get; set; }
+        public string Publisher { get; set; }
 
-        public string language { get; set; }
+        public string Language { get; set; }
 
-        public int noOfPages { get; set; }
+        public int NoOfPages { get; set; }
 
-        public List<string> authors { get; set; }
+        public List<string> Authors { get; set; }
 
-        public string barcode { get; set; }
+        public string Barcode { get; set; }
 
-        public bool isReferenceOnly { get; set; }
-
-        [BsonDateTimeOptions]
-        public DateTime borrowed { get; set; }
+        public bool IsReferenceOnly { get; set; }
 
         [BsonDateTimeOptions]
-        public DateTime dueDate { get; set; }
-
-        public double price { get; set; }
-
-        public string format { get; set; }
-
-        public string status { get; set; }
+        public DateTime Borrowed { get; set; }
 
         [BsonDateTimeOptions]
-        public DateTime dateOfPurchase { get; set; }
+        public DateTime DueDate { get; set; }
+
+        public double Price { get; set; }
+
+        public string Format { get; set; }
+
+        public string Status { get; set; }
 
         [BsonDateTimeOptions]
-        public DateTime publicationDate { get; set; }
+        public DateTime DateOfPurchase { get; set; }
 
-        public string placedAt { get; set; }
+        [BsonDateTimeOptions]
+        public DateTime PublicationDate { get; set; }
+
+        public string PlacedAt { get; set; }
 
     }
 }

@@ -19,12 +19,33 @@ namespace RepositoryImplementation.Mappers
 
         public static BookItem GetBookDomainModel(BookItemEntityModel bookItemEntityModel)
         {
+            var bookItemDomainModel = new BookItem(bookItemEntityModel.Barcode,
+                                                   bookItemEntityModel.IsReferenceOnly,
+                                                   bookItemEntityModel.Borrowed,
+                                                   bookItemEntityModel.DueDate,
+                                                   bookItemEntityModel.Price,
+                                                   bookItemEntityModel.Format,
+                                                   bookItemEntityModel.Status,
+                                                   bookItemEntityModel.DateOfPurchase,
+                                                   bookItemEntityModel.PublicationDate,
+                                                   bookItemEntityModel.PlacedAt,
+                                                   bookItemEntityModel.ISBN,
+                                                   bookItemEntityModel.Title,
+                                                   bookItemEntityModel.Subject,
+                                                   bookItemEntityModel.Publisher,
+                                                   bookItemEntityModel.Language,
+                                                   bookItemEntityModel.NoOfPages,
+                                                   bookItemEntityModel.Authors);          
+        }
+
+        public static BookItemEntityModel GetBookItemEntityModel(BookItem bookItem)
+        {
             MapperConfiguration mapperConfiguration = new MapperConfiguration(config =>
-                config.CreateMap<BookItemEntityModel, BookItem>()
-                );
+                config.CreateMap<BookItem, BookItemEntityModel>()
+            );
 
             IMapper mapper = mapperConfiguration.CreateMapper();
-            return mapper.Map<BookItemEntityModel, BookItem>(bookItemEntityModel);
+            return mapper.Map<BookItem, BookItemEntityModel>(bookItem);
         }
     }
 }

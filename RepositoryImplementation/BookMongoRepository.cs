@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using DataAccess;
 using DataAccess.Entity_Model;
 using DomainModel;
-using UseCaseBoundary;
 using MongoDB.Driver;
-using DataAccess;
-using MongoDB.Bson;
 using RepositoryImplementation.Mappers;
+using System;
+using System.Collections.Generic;
 using System.Linq;
-using MongoDB.Driver.Linq;
+using UseCaseBoundary;
 
 namespace RepositoryImplementation
 {
@@ -20,6 +17,7 @@ namespace RepositoryImplementation
         {
             _libraryManagementDBContext = LibraryManagementDBContext.Instance;
         }
+
         public List<BookItem> GetAllBookItem()
         {
             List<BookItemEntityModel> bookItemEntityModels = _libraryManagementDBContext.Books.AsQueryable().ToList();
@@ -30,13 +28,15 @@ namespace RepositoryImplementation
         public BookItem GetBookItem(string title)
         {
             BookItemEntityModel bookItemEntityModel = _libraryManagementDBContext.Books.AsQueryable()
-                .FirstOrDefault(x => x.title == title);
+                .FirstOrDefault(x => x.Title == title);
             BookItem bookDomainModel = BookModelMapper.GetBookDomainModel(bookItemEntityModel);
             return bookDomainModel;
         }
 
         public long AddBookItem(BookItem bookItem)
         {
+            BookItemEntityModel bookItemEntityModel = BookModelMapper.GetBookItemEntityModel(bookItem);
+            var result = _libraryManagementDBContext.Books;
             throw new NotImplementedException();
         }
     }
