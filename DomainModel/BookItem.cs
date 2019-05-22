@@ -15,11 +15,11 @@ namespace DomainModel
         private readonly BookStatus _status;
         private readonly DateTime _dateOfPurchase;
         private readonly DateTime _publicationDate;
-        private readonly Rack _placedAt;
+        private readonly int _placedAt;
 
         public BookItem(string barcode, bool isReferenceOnly, DateTime borrowed, 
             DateTime dueDate, double price, BookFormat format, BookStatus status,
-            DateTime dateOfPurchase, DateTime publicationDate, Rack placedAt,
+            DateTime dateOfPurchase, DateTime publicationDate, int placedAt,
             string ISBN, string title, string subject, string publisher, 
             Language language, int noOfPages, List<string> authors) : base(ISBN,
             title , subject, publisher, language, noOfPages, authors)
@@ -43,9 +43,4 @@ namespace DomainModel
         }
     }
 
-    public class Rack
-    {
-        private int number;
-        private string locationIdentifier;
-    }
 }

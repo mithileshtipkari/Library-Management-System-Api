@@ -2,6 +2,7 @@
 {
     public enum Language
     {
+        Unknown,
         Marathi,
         Hindi,
         English,

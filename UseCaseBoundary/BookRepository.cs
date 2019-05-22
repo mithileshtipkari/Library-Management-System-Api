@@ -10,6 +10,6 @@ namespace UseCaseBoundary
 
         BookItem GetBookItem(string title);
 
-        long AddBookItem(BookItem bookItem);
+        void AddBookItem(BookItem bookItem);
     }
 }

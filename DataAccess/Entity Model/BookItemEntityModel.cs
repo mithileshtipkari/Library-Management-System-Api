@@ -50,7 +50,7 @@ namespace DataAccess.Entity_Model
         [BsonDateTimeOptions]
         public DateTime PublicationDate { get; set; }
 
-        public string PlacedAt { get; set; }
+        public int PlacedAt { get; set; }
 
     }
 }

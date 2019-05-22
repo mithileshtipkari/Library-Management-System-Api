@@ -33,11 +33,10 @@ namespace RepositoryImplementation
             return bookDomainModel;
         }
 
-        public long AddBookItem(BookItem bookItem)
+        public void AddBookItem(BookItem bookItem)
         {
             BookItemEntityModel bookItemEntityModel = BookModelMapper.GetBookItemEntityModel(bookItem);
-            var result = _libraryManagementDBContext.Books;
-            throw new NotImplementedException();
+            _libraryManagementDBContext.Books.InsertOne(bookItemEntityModel);
         }
     }
 }

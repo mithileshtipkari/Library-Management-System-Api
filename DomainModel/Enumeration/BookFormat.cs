@@ -2,6 +2,7 @@
 {
     public enum BookFormat
     {
+        Unknown,
         Hardcover,
         Paperback,
         AudioBook,

@@ -2,6 +2,7 @@
 {
     public enum BookStatus
     {
+        Unknown,
         Available,
         Reserved,
         Loaned,
