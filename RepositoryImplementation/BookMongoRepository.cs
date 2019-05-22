@@ -35,8 +35,16 @@ namespace RepositoryImplementation
 
         public void AddBookItem(BookItem bookItem)
         {
-            BookItemEntityModel bookItemEntityModel = BookModelMapper.GetBookItemEntityModel(bookItem);
-            _libraryManagementDBContext.Books.InsertOne(bookItemEntityModel);
+            try
+            {
+                BookItemEntityModel bookItemEntityModel = BookModelMapper.GetBookItemEntityModel(bookItem);
+                _libraryManagementDBContext.Books.InsertOne(bookItemEntityModel);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
     }
 }
