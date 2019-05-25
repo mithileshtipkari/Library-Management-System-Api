@@ -1,9 +1,9 @@
 ﻿using DataAccess;
 using DataAccess.Entity_Model;
 using DomainModel;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using RepositoryImplementation.Mappers;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UseCaseBoundary;
@@ -33,18 +33,13 @@ namespace RepositoryImplementation
             return bookDomainModel;
         }
 
-        public void AddBookItem(BookItem bookItem)
+        public ObjectId AddBookItem(BookItem bookItem)
         {
-            try
-            {
-                BookItemEntityModel bookItemEntityModel = BookModelMapper.GetBookItemEntityModel(bookItem);
-                _libraryManagementDBContext.Books.InsertOne(bookItemEntityModel);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
+            BookItemEntityModel bookItemEntityModel = BookModelMapper.GetBookItemEntityModel(bookItem);
+            _libraryManagementDBContext.Books.InsertOne(bookItemEntityModel);
+
+            ObjectId id = bookItemEntityModel.objectId;
+            return id;
         }
     }
 }

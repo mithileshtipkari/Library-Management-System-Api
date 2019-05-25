@@ -1,6 +1,7 @@
 ﻿using DomainModel;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using MongoDB.Bson;
 
 namespace UseCaseBoundary
 {
@@ -10,6 +11,6 @@ namespace UseCaseBoundary
 
         BookItem GetBookItem(string title);
 
-        void AddBookItem(BookItem bookItem);
+        ObjectId AddBookItem(BookItem bookItem);
     }
 }
