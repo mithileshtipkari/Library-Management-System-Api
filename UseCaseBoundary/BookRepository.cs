@@ -7,7 +7,7 @@ namespace UseCaseBoundary
 {
     public interface BookRepository
     {
-        List<BookItem> GetAllBookItem();
+        IEnumerable<BookItem> GetAllBookItem();
 
         BookItem GetBookItem(string title);
 

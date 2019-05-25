@@ -12,22 +12,23 @@ namespace RepositoryImplementation
 {
     public class BookMongoRepository : BookRepository
     {
-        private readonly LibraryManagementDBContext _libraryManagementDBContext = null;
+        private readonly LibraryManagementDBContext _libraryManagementDbContext;
+
         public BookMongoRepository()
         {
-            _libraryManagementDBContext = LibraryManagementDBContext.Instance;
+            _libraryManagementDbContext = LibraryManagementDBContext.Instance;
         }
 
-        public List<BookItem> GetAllBookItem()
+        public IEnumerable<BookItem> GetAllBookItem()
         {
-            List<BookItemEntityModel> bookItemEntityModels = _libraryManagementDBContext.Books.AsQueryable().ToList();
-            List<BookItem> bookDomainModels = BookModelMapper.GetBookDomainModels(bookItemEntityModels);
+            IEnumerable<BookItemEntityModel> bookItemEntityModels = _libraryManagementDbContext.Books.AsQueryable();
+            IEnumerable<BookItem> bookDomainModels = BookModelMapper.GetBookDomainModels(bookItemEntityModels);
             return bookDomainModels;
         }
 
         public BookItem GetBookItem(string title)
         {
-            BookItemEntityModel bookItemEntityModel = _libraryManagementDBContext.Books.AsQueryable()
+            BookItemEntityModel bookItemEntityModel = _libraryManagementDbContext.Books.AsQueryable()
                 .FirstOrDefault(x => x.Title == title);
             BookItem bookDomainModel = BookModelMapper.GetBookDomainModel(bookItemEntityModel);
             return bookDomainModel;
@@ -36,7 +37,7 @@ namespace RepositoryImplementation
         public ObjectId AddBookItem(BookItem bookItem)
         {
             BookItemEntityModel bookItemEntityModel = BookModelMapper.GetBookItemEntityModel(bookItem);
-            _libraryManagementDBContext.Books.InsertOne(bookItemEntityModel);
+            _libraryManagementDbContext.Books.InsertOne(bookItemEntityModel);
 
             ObjectId id = bookItemEntityModel.objectId;
             return id;

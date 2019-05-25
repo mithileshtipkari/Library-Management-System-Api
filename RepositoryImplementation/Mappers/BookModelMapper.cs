@@ -9,7 +9,7 @@ namespace RepositoryImplementation.Mappers
 {
     public static class BookModelMapper
     {
-        public static List<BookItem> GetBookDomainModels(List<BookItemEntityModel> bookItemEntityModels)
+        public static IEnumerable<BookItem> GetBookDomainModels(IEnumerable<BookItemEntityModel> bookItemEntityModels)
         {
             List<BookItem> bookItems = new List<BookItem>();
 
