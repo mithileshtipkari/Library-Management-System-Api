@@ -1,7 +1,6 @@
 ﻿using DomainModel;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using MongoDB.Bson;
+using System.Collections.Generic;
 
 namespace UseCaseBoundary
 {

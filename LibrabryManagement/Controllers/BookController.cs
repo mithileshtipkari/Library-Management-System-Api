@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using DomainModel;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Bson;
+using System.Collections.Generic;
+using UseCaseBoundary;
 
 namespace LibraryManagementApi.Controllers
 {
@@ -10,30 +10,32 @@ namespace LibraryManagementApi.Controllers
     [ApiController]
     public class BookController : ControllerBase
     {
+        private readonly BookRepository _bookRepository;
+
+        public BookController(BookRepository bookRepository)
+        {
+            _bookRepository = bookRepository;
+        }
+
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public IEnumerable<BookItem> GetAllBooks()
         {
-            return new string[] { "value1", "value2" };
+            return _bookRepository.GetAllBookItem();
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public BookItem GetBook(string title)
         {
-            return "value";
+            return _bookRepository.GetBookItem(title);
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public ObjectId Post([FromBody] BookItem bookItem)
         {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
+           return _bookRepository.AddBookItem(bookItem);
         }
 
         // DELETE api/values/5
